@@ -27,6 +27,7 @@ exp.use(expSession(session));
 exp.engine('handlebars', handlebars.engine);
 exp.set('view engine', 'handlebars');
 
+exp.use(routes);
 exp.use(express.json());
 exp.use(express.urlencoded({ extended: false }));
 exp.use(express.static(path.join(__dirname, 'public')));
