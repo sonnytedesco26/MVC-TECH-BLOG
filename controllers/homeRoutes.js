@@ -42,6 +42,15 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
 // get single post
 router.get('/post/:id', (req, res) => {
   Post.findOne({
@@ -79,8 +88,9 @@ router.get('/post/:id', (req, res) => {
 
       res.render('single-post', {
         post,
-        username: req.session.username,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
+      
       });
     })
     .catch(err => {
@@ -89,13 +99,5 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
 
 module.exports = router;

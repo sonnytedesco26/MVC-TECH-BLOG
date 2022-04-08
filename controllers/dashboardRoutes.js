@@ -75,8 +75,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
         
         res.render('edit-post', {
           post,
-          username: req.session.username,
-          loggedIn: true
+          loggedIn: true,
+          username: req.session.username
         });
       } else {
         res.status(404).end();
