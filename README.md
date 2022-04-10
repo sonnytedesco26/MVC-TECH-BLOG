@@ -1,6 +1,6 @@
 # MVC-TECH-BLOG
 
-LINK TO DEPLOYED SITE:
+LINK TO DEPLOYED SITE: https://sonny-mvc-tech-blog.herokuapp.com/
 
 
 For this assignment, the task was to create a tech blog from scratch where users would be able to create accounts and post from said accounts to the main page. This would require 3 tables to generate the API calls necessary for the app: Users, posts, and comments.
